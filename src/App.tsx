@@ -1,13 +1,7 @@
 import { Header } from "./components/Header";
+import { InputCity } from "./components/InputCity";
 import { Item } from "./components/Item";
-import {
-	HotIcon,
-	MoonIcon,
-	SearchIcon,
-	SunIcon,
-	WindIcon,
-	HumedityIcon,
-} from "./Icons";
+import { HotIcon, MoonIcon, SunIcon, WindIcon, HumedityIcon } from "./Icons";
 import { convertUTCToTime } from "./logic";
 import mockData from "./mocks/data.json";
 import { WeatherResponse } from "./types";
@@ -28,14 +22,7 @@ function App() {
 				timezone={data.timezone}
 				description={data.weather[0].description}
 			/>
-			<section className="relative flex items-center m-3">
-				<input
-					type="text"
-					placeholder="Search city..."
-					className="w-[100%] p-2 bg-blue-50 rounded-md focus:outline-blue-300"
-				/>
-				<SearchIcon />
-			</section>
+			<InputCity />
 			<h1 className="text-center text-xl font-bold">More information</h1>
 			<main className="flex flex-col gap-3 md:grid md:grid-cols-2 md:gap-3 m-3">
 				<section className="flex flex-col p-3 bg-blue-100 rounded-md">
