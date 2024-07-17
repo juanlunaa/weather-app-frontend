@@ -7,21 +7,11 @@ import {
 	WindIcon,
 	HumedityIcon,
 } from "./Icons";
+import { capitalizeFirstLetter, convertUTCToTime } from "./logic";
 import mockData from "./mocks/data.json";
 import { WeatherResponse } from "./types";
 
 const data = mockData as WeatherResponse;
-
-const convertUTCToTime = (timestamp: number, timezone: number) => {
-	const date = new Date((timestamp + timezone) * 1000);
-	const hours = date.getUTCHours().toString().padStart(2, "0");
-	const minutes = date.getUTCMinutes().toString().padStart(2, "0");
-	return `${hours}:${minutes}`;
-};
-
-function capitalizeFirstLetter(string: string) {
-	return string.charAt(0).toUpperCase() + string.slice(1);
-}
 
 function App() {
 	const tempCelsius = (data.main.temp - 273.15).toFixed(1);
