@@ -1,0 +1,47 @@
+{
+  "coord": {
+    "lon": 145.8953,
+    "lat": -36.269
+  },
+  "weather": [
+    {
+      "id": 500,
+      "main": "Rain",
+      "description": "light rain",
+      "icon": "10d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 281.99,
+    "feels_like": 278.86,
+    "temp_min": 281.99,
+    "temp_max": 281.99,
+    "pressure": 1002,
+    "humidity": 92,
+    "sea_level": 1002,
+    "grnd_level": 984
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 6.17,
+    "deg": 232,
+    "gust": 12
+  },
+  "rain": {
+    "1h": 0.1
+  },
+  "clouds": {
+    "all": 60
+  },
+  "dt": 1721080431,
+  "sys": {
+    "country": "AU",
+    "sunrise": 1721078662,
+    "sunset": 1721114410
+  },
+  "timezone": 36000,
+  "id": 2176225,
+  "name": "St James",
+  "cod": 200
+}
