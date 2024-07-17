@@ -1,6 +1,7 @@
 import { Header } from "./components/Header";
 import { InputCity } from "./components/InputCity";
 import { Item } from "./components/Item";
+import { LargeItem } from "./components/LargeItem";
 import { HotIcon, MoonIcon, SunIcon, WindIcon, HumedityIcon } from "./Icons";
 import { convertUTCToTime } from "./logic";
 import mockData from "./mocks/data.json";
@@ -45,21 +46,17 @@ function App() {
 					/>
 				</section>
 				<section className="flex flex-col items-center p-3 bg-blue-100 rounded-md">
-					<div className="flex items-center gap-1">
-						<h1>Sunrise</h1>
-						<SunIcon />
-						<h1 className="text-4xl font-bold">
-							{convertUTCToTime(data.sys.sunrise, data.timezone)}
-						</h1>
-					</div>
+					<LargeItem
+						title="Sunrise"
+						info={convertUTCToTime(data.sys.sunrise, data.timezone)}
+						Icon={SunIcon}
+					/>
 
-					<div className="flex items-center gap-1">
-						<h1>Sunset</h1>
-						<MoonIcon />
-						<h1 className="text-4xl font-bold">
-							{convertUTCToTime(data.sys.sunset, data.timezone)}
-						</h1>
-					</div>
+					<LargeItem
+						title="Sunset"
+						info={convertUTCToTime(data.sys.sunset, data.timezone)}
+						Icon={MoonIcon}
+					/>
 				</section>
 			</main>
 		</div>
