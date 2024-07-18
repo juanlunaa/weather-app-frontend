@@ -10,19 +10,10 @@ import { WeatherResponse } from "./types";
 const data = mockData as WeatherResponse;
 
 function App() {
-	const tempCelsius = (data.main.temp - 273.15).toFixed(1);
 	const feelsLikeCelsius = (data.main.feels_like - 273.15).toFixed(1);
 	return (
 		<div className="max-w-screen-md mx-auto mt-[5%]">
-			<Header
-				name={data.name}
-				country={data.sys.country}
-				icon={data.weather[0].icon}
-				temp={tempCelsius}
-				dateConsulte={data.dt}
-				timezone={data.timezone}
-				description={data.weather[0].description}
-			/>
+			<Header />
 			<InputCity />
 			<h1 className="text-center text-xl font-bold">More information</h1>
 			<main className="flex flex-col gap-3 md:grid md:grid-cols-2 md:gap-3 m-3">
