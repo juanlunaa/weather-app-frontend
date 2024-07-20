@@ -2,14 +2,14 @@ import { useWeather } from "../hooks/useWeather";
 import { capitalizeFirstLetter, convertUTCToTime } from "../logic";
 
 export const Header = () => {
-	const { city, country, data } = useWeather();
+	const { data } = useWeather();
 
 	const tempCelsius = (data.main.temp - 273.15).toFixed(1);
 	return (
 		<header className="flex justify-between items-center m-3">
 			<div>
 				<p className="font-bold">
-					{city}, {country}
+					{data.name}, {data.sys.country}
 				</p>
 				<div className="flex items-center">
 					<img
