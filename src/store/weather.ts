@@ -1,31 +1,25 @@
 import { create } from "zustand";
 import { WeatherResponse } from "../types";
-import { fecthCityUser } from "../services/cityUser";
+import { fecthInitialWeather } from "../services/cityUser";
 import mockData from "../mocks/data.json";
 
 interface State {
-	city: string;
-	country: string;
 	apiResponse: WeatherResponse;
-	initialCity: () => void;
-	setCity: (city: string) => void;
+	initialWeather: () => void;
+	loading: boolean;
 	error: string;
 }
 
 export const useWeatherStore = create<State>()((set) => {
 	return {
-		city: "",
-		country: "",
 		apiResponse: mockData,
-		initialCity: async () => {
-			const json = await fecthCityUser();
+		initialWeather: async () => {
+			const json = await fecthInitialWeather();
 			if (json != null) {
-				set({ city: json.city, country: json.country });
+				set({ apiResponse: json, loading: false });
 			}
 		},
-		setCity: (city) => {
-			set({ city });
-		},
+		loading: true,
 		error: "",
 	};
 });
